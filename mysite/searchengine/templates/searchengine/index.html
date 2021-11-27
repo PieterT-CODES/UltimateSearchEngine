@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        body {
+            height: 70vh;
+            width: 100%;
+            /* fallback for old browsers */
+            background: url('static/searchengine/media/background.png');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            flex-direction: column;
+        }
+        
+        img {
+            width: 350px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .form__input {
+            font-family: 'Roboto', sans-serif;
+            color: rgb(14, 13, 13);
+            font-size: 1rem;
+            margin: 15px;
+            padding: 1.5rem 2rem;
+            border-radius: 0.2rem;
+            background-color: rgb(255, 255, 255);
+            border: none;
+            width: 400px;
+            display: block;
+            height: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    {% load static %}
+    <img src="{% static 'searchengine/media/logo.png' %}" alt="">
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" class="form__input" name="boxs" autofocus />
+    </form>
+
+
+</body>
+
+</html>
